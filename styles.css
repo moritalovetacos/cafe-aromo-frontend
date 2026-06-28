@@ -298,22 +298,23 @@ body {
 }
 
 .hero-image img {
-    width: 816px; /* 600px * 1.6 = 960px (60% más grande) */
-    height: 544px; /* 400px * 1.6 = 640px (60% más grande) */
+    width: 100%;
+    max-width: 816px;
+    height: auto;
     display: block;
-    border-radius: 30px; /* Bordes más redondeados */
+    border-radius: 30px;
     box-shadow: 
-        0 20px 40px rgba(139, 115, 85, 0.3), /* Sombra principal más profunda */
-        0 10px 20px rgba(139, 115, 85, 0.2), /* Sombra media */
-        0 5px 10px rgba(139, 115, 85, 0.1), /* Sombra suave */
-        inset 0 2px 4px rgba(255, 255, 255, 0.2); /* Brillo interno */
+        0 20px 40px rgba(139, 115, 85, 0.3),
+        0 10px 20px rgba(139, 115, 85, 0.2),
+        0 5px 10px rgba(139, 115, 85, 0.1),
+        inset 0 2px 4px rgba(255, 255, 255, 0.2);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     z-index: 1;
     margin: 0 auto;
     object-fit: cover;
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
-    object-position: right center; /* Enfocar el peso visual a la derecha */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    object-position: right center;
 }
 
 .product-image img:hover,
@@ -928,12 +929,14 @@ html {
 }
 
 /* Form validation */
-.contact-form input:invalid,
-.contact-form textarea:invalid {
-    border-color: #ff6b6b;
+.contact-form input.field-valid,
+.contact-form textarea.field-valid {
+    border-color: #51cf66;
+    box-shadow: 0 0 0 3px rgba(81, 207, 102, 0.12);
 }
 
-.contact-form input:valid,
-.contact-form textarea:valid {
-    border-color: #51cf66;
+.contact-form input.field-invalid,
+.contact-form textarea.field-invalid {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.12);
 }

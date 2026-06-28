@@ -65,37 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
     animateElements.forEach(el => observer.observe(el));
 });
 
-// Formulario de contacto
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.querySelector('.contact-form form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Obtener datos del formulario
-            const formData = new FormData(this);
-            const name = this.querySelector('input[type="text"]').value;
-            const email = this.querySelector('input[type="email"]').value;
-            const phone = this.querySelector('input[type="tel"]').value;
-            const message = this.querySelector('textarea').value;
-            
-            // Validación básica
-            if (!name || !email || !message) {
-                showNotification('Por favor completa todos los campos obligatorios', 'error');
-                return;
-            }
-            
-            // Simular envío
-            showNotification('Enviando mensaje...', 'info');
-            
-            setTimeout(() => {
-                showNotification('¡Mensaje enviado con éxito! Te contactaremos pronto.', 'success');
-                this.reset();
-            }, 2000);
-        });
-    }
-});
-
 // Sistema de notificaciones
 function showNotification(message, type = 'info') {
     // Crear elemento de notificación
@@ -278,21 +247,98 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Validación de formulario en tiempo real
 document.addEventListener('DOMContentLoaded', function() {
-    const inputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
-    
-    inputs.forEach(input => {
-        input.addEventListener('blur', function() {
-            if (this.hasAttribute('required') && !this.value.trim()) {
-                this.style.borderColor = '#ff6b6b';
-            } else if (this.value.trim()) {
-                this.style.borderColor = '#51cf66';
+    const contactForm = document.querySelector('.contact-form form');
+    const inputs = contactForm ? contactForm.querySelectorAll('input, textarea') : [];
+
+    function isEmailValid(value) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+
+    function isNameValid(value) {
+        return /^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$/.test(value);
+    }
+
+    function validateField(field) {
+        const value = field.value.trim();
+        const isRequired = field.hasAttribute('required');
+        const isEmail = field.type === 'email';
+        const hasValue = value.length > 0;
+        const maxLength = Number(field.getAttribute('maxlength')) || Infinity;
+        const withinMaxLength = value.length <= maxLength;
+
+        let isValid = false;
+
+        if (field.getAttribute('placeholder') === 'Tu Nombre') {
+            isValid = hasValue ? isNameValid(value) && withinMaxLength : false;
+        } else if (isEmail) {
+            isValid = hasValue ? isEmailValid(value) && withinMaxLength : false;
+        } else if (isRequired) {
+            isValid = hasValue && withinMaxLength;
+        } else {
+            isValid = !hasValue || withinMaxLength;
+        }
+
+        if (field.dataset.touched === 'true') {
+            field.classList.toggle('field-invalid', !isValid);
+            field.classList.toggle('field-valid', isValid && hasValue);
+        } else {
+            field.classList.remove('field-invalid', 'field-valid');
+        }
+
+        return isValid;
+    }
+
+    function validateForm() {
+        let formIsValid = true;
+
+        inputs.forEach(input => {
+            input.dataset.touched = 'true';
+            if (!validateField(input)) {
+                formIsValid = false;
             }
         });
-        
+
+        return formIsValid;
+    }
+
+    inputs.forEach(input => {
         input.addEventListener('focus', function() {
-            this.style.borderColor = '#8B7355';
+            this.classList.remove('field-invalid', 'field-valid');
+        });
+
+        input.addEventListener('input', function() {
+            validateField(this);
+        });
+
+        input.addEventListener('blur', function() {
+            this.dataset.touched = 'true';
+            validateField(this);
         });
     });
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formIsValid = validateForm();
+
+            if (!formIsValid) {
+                showNotification('Por favor completa los campos obligatorios correctamente', 'error');
+                return;
+            }
+
+            showNotification('Enviando mensaje...', 'info');
+
+            setTimeout(() => {
+                showNotification('¡Mensaje enviado con éxito! Te contactaremos pronto.', 'success');
+                this.reset();
+                inputs.forEach(input => {
+                    input.classList.remove('field-invalid', 'field-valid');
+                    input.dataset.touched = 'false';
+                });
+            }, 2000);
+        });
+    }
 });
 
 // Efecto parallax suave en hero

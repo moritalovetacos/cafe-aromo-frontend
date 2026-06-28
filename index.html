@@ -225,12 +225,12 @@
                 
                 <div class="contact-form">
                     <h3>Realiza tu pedido</h3>
-                    <form>
-                        <input type="text" placeholder="Tu Nombre" required>
-                        <input type="email" placeholder="Tu Email" required>
-                        <input type="text" placeholder="Tu Dirección">
-                        <input type="tel" placeholder="Tu Teléfono">
-                        <textarea placeholder="Tu Mensaje" rows="5" required></textarea>
+                    <form novalidate>
+                        <input type="text" placeholder="Tu Nombre" required maxlength="50" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+">
+                        <input type="email" placeholder="Tu Email" required maxlength="60">
+                        <input type="text" placeholder="Tu Dirección" maxlength="60">
+                        <input type="tel" placeholder="Tu Teléfono" maxlength="10">
+                        <textarea placeholder="Tu Mensaje" rows="5" required maxlength="500"></textarea>
                         <button type="submit" class="submit-button">
                             <i class="fas fa-paper-plane"></i>
                             Enviar Mensaje
