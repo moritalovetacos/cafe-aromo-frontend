@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Aroma - Punto de Venta</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-coffee"></i>
+                    <span>Café Aromo</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="#nosotros"><i class="fas fa-info-circle"></i> Nosotros</a></li>
+                    <li><a href="#catalogo"><i class="fas fa-coffee"></i> Catálogo</a></li>
+                    <li><a href="#servicios"><i class="fas fa-images"></i> Servicios</a></li>
+                    <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Café Aromo</h1>
+            <p>El sabor auténtico del café artesanal en cada taza</p>
+            <button class="cta-button">
+                <i class="fas fa-shopping-cart"></i>
+                Ver Catálogo
+            </button>
+        </div>
+        <div class="hero-image">
+            <img src="imagenes/cafe.jpeg" alt="Esta es una imagen de café artesanal">
+        </div>
+    </section>
+
+    <!-- Nosotros Section -->
+    <section id="nosotros" class="about">
+        <div class="container">
+            <h2>Sobre Café Aromo</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Nuestro Giro</h3>
+                    <p>Somos una cafetería artesanal especializada en café de origen, pasteles caseros y un ambiente acogedor para disfrutar y trabajar. Ofrecemos experiencias únicas alrededor del café, desde tostado propio hasta preparaciones especializadas.</p>
+                    
+                    <h3>Público Enfocado</h3>
+                    <p>Profesionales, estudiantes, amantes del café y personas que buscan un espacio confortable para reuniones, trabajo o simplemente disfrutar de un momento de calidad.</p>
+                    
+                    <h3>Nuestra Misión</h3>
+                    <p>Convertirnos en el punto de encuentro preferido de la comunidad, ofreciendo no solo productos excepcionales sino también experiencias memorables.</p>
+                </div>
+                <div class="about-image">
+                    <img src="imagenes/cafeteria.jpg" alt="Esta es una imagen de nuestra cafetería">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catálogo Section -->
+    <section id="catalogo" class="catalog">
+        <div class="container">
+            <h2>Nuestro Catálogo</h2>
+            <div class="catalog-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="imagenes/espreso.jpg" alt="Esta es una imagen de espresso">
+                    </div>
+                    <div class="product-info">
+                        <h3>Espresso Clásico</h3>
+                        <p>Café intenso y concentrado con notas de chocolate y caramelo</p>
+                        <div class="price">$45</div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="imagenes/capuchino.jpeg" alt="Esta es una imagen de cappuccino">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cappuccino</h3>
+                        <p>Espresso con leche espumosa y un toque de cacao</p>
+                        <div class="price">$55</div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="imagenes/latte.jpg" alt="Esta es una imagen de latte">
+                    </div>
+                    <div class="product-info">
+                        <h3>Latte Artesanal</h3>
+                        <p>Leche vaporizada con doble shot de espresso y arte latte</p>
+                        <div class="price">$60</div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="imagenes/americano.webp" alt="Esta es una imagen de americano">
+                    </div>
+                    <div class="product-info">
+                        <h3>Americano</h3>
+                        <p>Espresso diluido con agua caliente, suave y equilibrado</p>
+                        <div class="price">$40</div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="imagenes/zana.jpg" alt="Esta es una imagen de pastel">
+                    </div>
+                    <div class="product-info">
+                        <h3>Pastel de Zanahoria</h3>
+                        <p>Delicioso pastel casero con crema cheese y nueces</p>
+                        <div class="price">$75</div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="imagenes/croasan.jpeg" alt="Esta es una imagen de croissant">
+                    </div>
+                    <div class="product-info">
+                        <h3>Croissant Fresco</h3>
+                        <p>Hojaldre crujiente recién horneado, mantecoso y dorado</p>
+                        <div class="price">$35</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería Section -->
+    <section id="Servicios" class="gallery">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="imagenes/espacio.jpg" alt="Esta es una imagen del espacio de trabajo">
+                    <h3>Espacio de Trabajo</h3>
+                    <p>Ambiente ideal para trabajar con WiFi gratis y tomas de corriente</p>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="imagenes/toast.jpg"alt="Esta es una imagen del tostado propio">
+                    <h3>Tostado Propio</h3>
+                    <p>Control total sobre la calidad y frescura de nuestros granos</p>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="imagenes/reunion.jpg" alt="Esta es una imagen de eventos">
+                    <h3>Eventos Privados</h3>
+                    <p>Organizamos catas de café y eventos corporativos</p>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="imagenes/delivery.webp" alt="Esta es una imagen del servicio delivery">
+                    <h3>Delivery a Domicilio</h3>
+                    <p>Llevamos el mejor café directamente a tu hogar u oficina</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2>Información de Contacto</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Dirección</h3>
+                            <p>Av. Principal #123, Col. Centro<br>Ciudad de México, CDMX 06000</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p>+52 55 1234 5678</p>
+                            <a href="https://wa.me/525512345678" class="contact-button" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                Enviar Mensaje
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <div>
+                            <h3>Instagram</h3>
+                            <p>@cafe_aroma_mx</p>
+                            <a href="https://instagram.com/cafe_aroma_mx" class="contact-button" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                                Seguirnos
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Horario</h3>
+                            <p>Lunes a Viernes: 7:00 - 20:00<br>Sábados y Domingos: 8:00 - 18:00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Realiza tu pedido</h3>
+                    <form>
+                        <input type="text" placeholder="Tu Nombre" required>
+                        <input type="email" placeholder="Tu Email" required>
+                        <input type="text" placeholder="Tu Dirección">
+                        <input type="tel" placeholder="Tu Teléfono">
+                        <textarea placeholder="Tu Mensaje" rows="5" required></textarea>
+                        <button type="submit" class="submit-button">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-coffee"></i>
+                    <span>Café Aroma</span>
+                </div>
+                <p>&copy; 2024 Café Aroma. Todos los derechos reservados.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/cafe_aroma_mx" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/525512345678" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://facebook.com/cafe_aroma_mx" target="_blank"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
